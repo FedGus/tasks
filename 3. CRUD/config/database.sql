@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 11 2024 г., 18:41
+-- Время создания: Сен 26 2024 г., 23:03
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -24,33 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `forma`
+-- Структура таблицы `comments`
 --
 
-CREATE TABLE `form` (
-  `id` int(50) NOT NULL,
-  `name` text DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL
-  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `user_name` text NOT NULL,
+  `comment_text` varchar(200) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `form`
+-- Дамп данных таблицы `comments`
 --
 
-INSERT INTO `form` (`id`, `name`, `description`, `created_at`) VALUES
-(1, 'Владимир', 'Мой первый комментарий!'),
-(2, 'Владимир', 'новый комментарий'),
-(3, 'Владислав', 'Мой первый комментарий');
+INSERT INTO `comments` (`id`, `user_name`, `comment_text`, `created_at`) VALUES
+(1, 'Владимир', 'Мой первый комментарий', '2024-09-26 19:53:21'),
+(2, 'Алексей', 'Мой новый комментарий', '2024-09-26 19:58:46'),
+(3, 'Мария', 'Тот еще комментарий', '2024-09-26 20:00:09'),
+(4, 'Саша', '-', '2024-09-26 20:30:36');
 
 --
 -- Индексы сохранённых таблиц
 --
 
 --
--- Индексы таблицы `form`
+-- Индексы таблицы `comments`
 --
-ALTER TABLE `form`
+ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,10 +59,10 @@ ALTER TABLE `form`
 --
 
 --
--- AUTO_INCREMENT для таблицы `form`
+-- AUTO_INCREMENT для таблицы `comments`
 --
-ALTER TABLE `form`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
