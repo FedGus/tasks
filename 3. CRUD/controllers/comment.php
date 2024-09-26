@@ -11,7 +11,7 @@ class CommentController
         $this->commentModel = new CommentModel($mysqli);
     }
 
-    public function add()
+    public function addComment()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST['name'];
@@ -20,7 +20,7 @@ class CommentController
         }
     }
 
-    public function index()
+    public function getComments()
     {
         return $this->commentModel->getComments();
     }
