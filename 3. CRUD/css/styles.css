@@ -1,0 +1,64 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+    margin: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.form-control {
+    height: 22px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+}
+
+.form-control::placeholder {
+	font-size: 12px;
+    padding: 4px;
+	color: lightgrey;
+}
+
+.btn {
+    height: 30px;
+    background-color: #dc143c;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.card {
+    padding: 8px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgb(248, 248, 248);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #dc143c;
+}
+
+.card-caption {
+    font-size: 12px;
+    font-weight: 600;
+    color: gray;
+}

@@ -1,22 +1,22 @@
 <?php
-require_once '../config/connect.php';
-require_once '../models/comment.php';
+require_once 'config/connect.php';
+require_once 'models/comment.php';
 
 class CommentController
 {
     private $commentModel;
 
-    public function __construct($mysqli)
+    public function __construct($pdo)
     {
-        $this->commentModel = new CommentModel($mysqli);
+        $this->commentModel = new CommentModel($pdo);
     }
 
     public function addComment()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = $_POST['name'];
-            $comment = $_POST['comment'];
-            $this->commentModel->addComment($name, $comment);
+            $name = $_POST['user_name'];
+            $text = $_POST['comment_text'];
+            $this->commentModel->addComment($name, $text);
         }
     }
 

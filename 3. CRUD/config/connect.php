@@ -1,12 +1,14 @@
 <?php
 $host = 'localhost';
 $db = 'comments_db';
-$user = 'root';
-$pass = '';
+$user = 'root'; 
+$pass = ''; 
 
-$mysqli = new mysqli($host, $user, $pass, $db);
+global $pdo;
 
-if ($mysqli->connect_error) {
-    die("Ошибка подключения: " . $mysqli->connect_error);
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+} catch (PDOException $exception) {
+    die("Ошибка подключения: " . $exception->getMessage());
 }
 ?>
