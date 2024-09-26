@@ -21,7 +21,7 @@
 .form-control::placeholder {
 	font-size: 12px;
     padding: 4px;
-	color: lightgrey;
+	color: #d3d3d3;
 }
 
 .btn {
@@ -40,9 +40,9 @@
 
 .card {
     padding: 8px;
-    border: 1px solid lightgrey;
+    border: 1px solid #d3d3d3;
     border-radius: 4px;
-    box-shadow: 0 1px 4px rgb(248, 248, 248);
+    box-shadow: 0 1px 4px #f8f8f8;
 }
 
 .card-body {
@@ -60,5 +60,5 @@
 .card-caption {
     font-size: 12px;
     font-weight: 600;
-    color: gray;
+    color: #808080;
 }
