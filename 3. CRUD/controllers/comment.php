@@ -1,6 +1,6 @@
 <?php
-require_once '../config/database.php';
-require_once '../models/Comment.php';
+require_once '../config/connect.php';
+require_once '../models/comment.php';
 
 class CommentController
 {

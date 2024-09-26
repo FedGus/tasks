@@ -4,8 +4,9 @@ $db = 'comments_db';
 $user = 'root';
 $pass = '';
 
-$connect = mysqli_connect($host, $user, $pass, $db);
+$mysqli = new mysqli($host, $user, $pass, $db);
 
-if ($connect == false) {
-    die("Ошибка подключения: " . mysqli_connect_error());
+if ($mysqli->connect_error) {
+    die("Ошибка подключения: " . $mysqli->connect_error);
 }
+?>
