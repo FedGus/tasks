@@ -19,7 +19,7 @@
         ['Петров', 'ОБЖ', 4],
     ];
 
-    // функция обрабатывает массив и суммирует баллы
+    // Функция обрабатывает массив и суммирует баллы
     $summary = [];
     foreach ($data as [$student, $subject, $score]) {
         if (!isset($summary[$student])) {
@@ -31,7 +31,7 @@
         $summary[$student][$subject] += $score;
     }
 
-    // определил уникальные предметы и сортируем
+    // Определяем уникальные предметы и сортируем
     $subjects = [];
     foreach ($summary as $grades) {
         $subjects = array_merge($subjects, array_keys($grades));

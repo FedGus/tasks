@@ -22,9 +22,9 @@
 </p>
 TXT;
     /**
-     * @param string $html
-     * @param int $wordLimit
-     * @return string
+     * @param string $html Входной текст с форматированием
+     * @param int $wordLimit Количество слов, на которое обрезается текст
+     * @return string Итоговая строка с форматированием
      */
 
     function truncateHtml($html, $wordLimit)
@@ -37,15 +37,13 @@ TXT;
         $truncatedHtml = '';
 
         foreach ($words as $word) {
-            // Увеличиваем счетчик слов
-            if (trim(strip_tags($word)) !== '') {
+            // Проверяем, является ли словом элемент массива
+            if (trim(strip_tags($word)) !== '' && !preg_match('/^[\s.,!?;:]+$/', $word)) {
                 $wordCount++;
             }
 
-            // Добавляем слово в результат
             $truncatedHtml .= ' ' . $word;
 
-            // Если достигли лимита, добавляем многоточие и выходим из цикла
             if ($wordCount >= $wordLimit) {
                 $truncatedHtml .= '...';
                 break;
@@ -55,11 +53,9 @@ TXT;
         return $truncatedHtml;
     }
 
-
     $truncated_text = truncateHtml($text, 29);
     echo $truncated_text;
     ?>
-
 </body>
 
 </html>

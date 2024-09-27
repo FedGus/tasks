@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @param int $n
- * @param int $m
- * @return int
+ * @param int $n Количество сестер
+ * @param int $m Количество братьев
+ * @return int Количество сестер произвольного брата Алисы 
  */
 
 function countSistersForBrother($n, $m)
@@ -12,8 +12,8 @@ function countSistersForBrother($n, $m)
     return $n + 1;
 }
 
-$n = 3; // Количество сестер
-$m = 2; // Количество братьев
+$n = 3;
+$m = 2;
 
 $sistersForBrother = countSistersForBrother($n, $m);
 echo "Количество сестер произвольного брата Алисы: " . $sistersForBrother;
